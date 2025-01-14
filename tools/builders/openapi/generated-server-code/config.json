@@ -1,0 +1,21 @@
+{
+  "help": "https://openapi-generator.tech/docs/generators/spring",
+  "generatorName": "spring",
+  "outputDir": "../../../generated",
+  "inputSpec": "../../../libs/openapi/internal/openapi.yml",
+  "additionalProperties": {
+    "library": "spring-boot",
+    "dateLibrary": "java-time",
+    "useTags": true,
+    "interfaceOnly": true,
+    "skipDefaultInterface": true,
+    "useBeanValidation": true,
+    "apiPackage": "com.internal.api",
+    "modelPackage": "com.internal.model",
+    "sourceFolder": "src/generated/java",
+    "useSpringBoot3": true,
+    "useSpringController": true,
+    "skipPomFile": true,
+    "requestMappingMode": "api_interface"
+  }
+}

@@ -1,0 +1,5 @@
+description: 400, bad request, used when the request is not correct, but can be fixed by the caller. Think of a wrong date format or enum
+content:
+  application/problem+json:
+    schema:
+      $ref: '../openapi.yml#/components/schemas/Problem'

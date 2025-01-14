@@ -1,0 +1,25 @@
+type: object
+title: Address
+properties:
+  street:
+    type: string
+  number:
+    type: string
+  number2:
+    type: string
+  zipCode:
+    type: string
+  city:
+    type: string
+required:
+  - street
+  - number
+  - number2
+  - zipCode
+  - city
+example:
+    street: '123 Main St'
+    number: '1'
+    number2: '2'
+    zipCode: '12345'
+    city: 'Anytown'

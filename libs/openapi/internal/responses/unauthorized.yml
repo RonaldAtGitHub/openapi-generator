@@ -1,0 +1,5 @@
+description: 401, unauthorized
+content:
+  application/problem+json:
+    schema:
+      $ref: '../openapi.yml#/components/schemas/Problem'

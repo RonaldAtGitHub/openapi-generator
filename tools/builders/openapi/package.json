@@ -1,0 +1,19 @@
+{
+  "name": "generators",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "validate": "openapi-generator-cli validate -i ../../../libs/openapi/internal/openapi.yml",
+    "clean:generated": "rimraf ../../../generated",
+    "generate:server": "npm run clean:generated && openapi-generator-cli generate -c generated-server-code/config.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@openapitools/openapi-generator-cli": "^2.13.4",
+    "rimraf": "^6.0.1"
+  }
+}
+
+

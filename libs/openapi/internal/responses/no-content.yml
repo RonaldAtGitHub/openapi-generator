@@ -1,0 +1,5 @@
+description: 204, No Content
+content:
+  application/problem+json:
+    schema:
+      type: string

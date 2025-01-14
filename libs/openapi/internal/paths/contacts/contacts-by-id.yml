@@ -1,0 +1,54 @@
+delete:
+  tags:
+    - Client
+  summary: Delete contact
+  description: Delete client company with {id}, this marks a client for deletion in the database
+  operationId: delete-clients-contacts
+  parameters:
+    - name: id
+      in: path
+      description: unique id in the database
+      required: true
+      schema:
+        type: string
+  responses:
+    '204':
+      $ref: '../../openapi.yml#/components/responses/no-content'
+    '401':
+      $ref: '../../openapi.yml#/components/responses/unauthorized'
+    '403':
+      $ref: '../../openapi.yml#/components/responses/forbidden'
+    '404':
+      $ref: '../../openapi.yml#/components/responses/not-found'
+  security:
+    - UsernameAndPassword: []
+    - ApiHeaderKey: []
+
+get:
+  tags:
+    - Contact
+  summary: Get contact
+  description: OK
+  operationId: get-contacts-id
+  parameters:
+    - name: id
+      in: path
+      description: unique id in the database
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: '../../openapi.yml#/components/schemas/IdentifiedContact'
+    '400':
+      $ref: '../../openapi.yml#/components/responses/bad-request'
+    '401':
+      $ref: '../../openapi.yml#/components/responses/unauthorized'
+  security:
+    - UsernameAndPassword: []
+    - ApiHeaderKey: []
+

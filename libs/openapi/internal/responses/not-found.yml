@@ -1,0 +1,6 @@
+description: 404, not found if request is done with a specific id and does not return found an entity
+content:
+  application/problem+json:
+    schema:
+      allOf:
+        - $ref: '../openapi.yml#/components/schemas/Problem'

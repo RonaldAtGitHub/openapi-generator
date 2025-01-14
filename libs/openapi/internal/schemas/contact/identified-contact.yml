@@ -1,0 +1,23 @@
+title: IdentifiedContact
+allOf:
+  - type: object
+    properties:
+      id:
+        type: string
+    required:
+      - id
+  - $ref: '../../openapi.yml#/components/schemas/Contact'
+example:
+    id: '1'
+    name: string
+    number: string
+    status: string
+    type: COMPANY_CLIENT
+    address:
+        street: string
+        city: string
+        state: string
+        zip: string
+    office:
+        label: string
+        code: string

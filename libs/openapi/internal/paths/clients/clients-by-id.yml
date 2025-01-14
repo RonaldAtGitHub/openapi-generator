@@ -1,0 +1,54 @@
+delete:
+  tags:
+    - Client
+  summary: Delete client
+  description: Delete client
+  operationId: delete-clients
+  parameters:
+    - name: id
+      in: path
+      description: unique id in the database
+      required: true
+      schema:
+        type: string
+  responses:
+    '204':
+      $ref: '../../openapi.yml#/components/responses/no-content'
+    '401':
+      $ref: '../../openapi.yml#/components/responses/unauthorized'
+    '403':
+      $ref: '../../openapi.yml#/components/responses/forbidden'
+    '404':
+      $ref: '../../openapi.yml#/components/responses/not-found'
+  security:
+    - UsernameAndPassword: []
+    - ApiHeaderKey: []
+
+get:
+  tags:
+    - Client
+  summary: Get client
+  description: OK
+  operationId: get-clients-id
+  parameters:
+    - name: id
+      in: path
+      description: unique id in the database
+      required: true
+      schema:
+        type: string
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: '../../openapi.yml#/components/schemas/IdentifiedClient'
+    '400':
+      $ref: '../../openapi.yml#/components/responses/bad-request'
+    '401':
+      $ref: '../../openapi.yml#/components/responses/unauthorized'
+  security:
+    - UsernameAndPassword: []
+    - ApiHeaderKey: []
+

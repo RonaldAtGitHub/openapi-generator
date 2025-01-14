@@ -1,0 +1,22 @@
+title: IdentifiedClient
+allOf:
+  - type: object
+    properties:
+      id:
+        type: string
+    required:
+      - id
+  - $ref: '../../openapi.yml#/components/schemas/Client'
+example:
+  id: '1'
+  gender: 'male'
+  surname: 'Doe'
+  firstName: 'John'
+  address:
+    street: '123 Main St'
+    city: 'Anytown'
+    state: 'CA'
+    zip: '12345'
+  office:
+    label: 'HQ'
+    code: '001'

@@ -1,0 +1,5 @@
+description: no access to id
+content:
+  application/problem+json:
+    schema:
+      $ref: '../openapi.yml#/components/schemas/Problem'

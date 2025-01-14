@@ -1,0 +1,14 @@
+type: object
+title: Office
+description: data type with a label and a code
+properties:
+  label:
+    type: string
+  code:
+    type: string
+required:
+  - label
+  - code
+example:
+    label: 'HQ'
+    code: '001'

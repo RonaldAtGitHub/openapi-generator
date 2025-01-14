@@ -1,0 +1,35 @@
+type: object
+title: Problem
+description: |-
+  We return a json object with information of the exception as described here,  with the media type application/problem+json.
+          https://datatracker.ietf.org/doc/html/rfc7807
+properties:
+  type:
+    type: string
+    description: ' A URI describing the type of the error'
+  title:
+    type: string
+    description: URI indicating error type
+  status:
+    type: integer
+    description: "HTTP status code\r\n"
+  detail:
+    type: string
+    description: Human-readable error message
+  instance:
+    type: string
+    description: URI indicating error instance
+  tag:
+    type: string
+required:
+  - title
+  - status
+  - detail
+  - instance
+example:
+    title: 'Invalid input'
+    status: 400
+    detail: 'The input is invalid'
+    instance: '/account/12345'
+    type: 'https://example.com/probs/invalid-input'
+    tag: 'invalid-input'

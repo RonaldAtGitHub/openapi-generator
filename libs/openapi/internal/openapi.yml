@@ -1,0 +1,72 @@
+openapi: 3.1.0
+info:
+  version: 1.0.0
+  title: Demo API
+  description: API used to access data
+  contact:
+    name: Demo
+    url: 'https://demo.com'
+    email: info@demo.com
+  license:
+    url: 'https://demo.com'
+    name: Internal
+
+servers:
+  - url: '/api'
+
+paths:
+  /clients/{id}:
+    $ref: './paths/clients/clients-by-id.yml'
+  /contacts/{id}:
+    $ref: './paths/contacts/contacts-by-id.yml'
+
+tags:
+  - name: Client
+    description: client
+  - name: Contact
+    description: contact
+
+components:
+  securitySchemes:
+    ApiHeaderKey:
+      type: apiKey
+      name: X-API-KEY
+      in: header
+    UsernameAndPassword:
+      type: http
+      scheme: basic
+
+  responses:
+    bad-request:
+      $ref: './responses/bad-request.yml'
+    forbidden:
+      $ref: './responses/forbidden.yml'
+    not-found:
+      $ref: './responses/not-found.yml'
+    unauthorized:
+      $ref: './responses/unauthorized.yml'
+    no-content:
+      $ref: './responses/no-content.yml'
+  schemas:
+    Address:
+      $ref: 'schemas/address/address.yml'
+    Client:
+      $ref: 'schemas/client/client.yml'
+    Contact:
+      $ref: 'schemas/contact/contact.yml'
+    IdentifiedClient:
+      $ref: 'schemas/client/identified-client.yml'
+    IdentifiedContact:
+      $ref: 'schemas/contact/identified-contact.yml'
+    Office:
+      $ref: 'schemas/office/office.yml'
+    Problem:
+      $ref: 'schemas/problem.yml'
+    System:
+      $ref: 'schemas/system.yml'
+
+
+security:
+  - ApiHeaderKey: [ ]
+  - UsernameAndPassword: [ ]
+

@@ -1,0 +1,31 @@
+type: object
+title: Contact
+properties:
+  gender:
+    type: string
+  surname:
+    type: string
+  firstName:
+    type: string
+  address:
+    $ref: '../../openapi.yml#/components/schemas/Address'
+  office:
+    $ref: '../../openapi.yml#/components/schemas/Office'
+  system:
+    $ref: '../../openapi.yml#/components/schemas/System'
+required:
+  - surname
+  - firstName
+example:
+  gender: 'male'
+  surname: 'Doe'
+  firstName: 'John'
+  address:
+    street: '123 Main St'
+    number: '1'
+    number2: '2'
+    zipCode: '12345'
+    city: 'Anytown'
+  office:
+    label: 'HQ'
+    code: '001'

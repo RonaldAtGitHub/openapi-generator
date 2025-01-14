@@ -1,0 +1,42 @@
+type: object
+title: Client
+properties:
+  name:
+    type: string
+  number:
+    type: string
+  status:
+    type: string
+  type:
+    type: string
+    enum:
+      - COMPANY_CLIENT
+      - PERSON_CLIENT
+      - COMPANY_RELATION
+  address:
+    $ref: '../../openapi.yml#/components/schemas/Address'
+  office:
+    $ref: '../../openapi.yml#/components/schemas/Office'
+  system:
+    $ref: '../../openapi.yml#/components/schemas/System'
+required:
+  - name
+example:
+    name: "Client Name"
+    number: "1234567890"
+    status: "ACTIVE"
+    type: "COMPANY_CLIENT"
+    address:
+      street: "Street Name"
+      number: "123"
+      number2: ""
+      city: "City Name"
+      state: "State Name"
+      country: "Country Name"
+      zipCode: "12345678"
+    office:
+      label: 'HQ'
+      code: '001'
+    system:
+      lastModified: "2024-09-19T14:30:00Z"
+      creationDate: "2023-01-01T08:00:00Z"
